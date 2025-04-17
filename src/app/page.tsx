@@ -1,8 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import TabBar from "../app/components/TabBar";
 import CodeEditor from "../app/components/codeEditor";
+
+const codeEditor = dynamic(() => import("../app/components/codeEditor"), { ssr: false });
 
 const languages = [
   { label: "JavaScript", value: "javascript" },
